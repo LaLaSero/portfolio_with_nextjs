@@ -1,0 +1,10 @@
+.splide {
+	display: flex;
+	overflow-x: auto;
+  }
+  
+  .splideSlide {
+	flex: 0 0 auto;
+	width: 50%; /* スライドの幅を調整 */
+  }
+  
