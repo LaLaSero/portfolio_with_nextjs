@@ -13,6 +13,8 @@ return (
 		max-width: 1200px; /* ナビゲーションバーの最大幅 */
 		margin: 0 auto; /* 中央寄せ */
 		padding: 0 10px; /* 余白 */
+		margin-top: 12px; /* 上部の余白 */
+		margin-bottom: 12px; /* 下部の余白 */
 	}
 	ul {
 		list-style: none; /* リストスタイルの消去 */
@@ -71,14 +73,14 @@ return (
 			</Link>
 		</li>
 		<li>
-			<Link legacyBehavior href="/about"><a className="top-link">About</a></Link>
+			<Link legacyBehavior href="#about-me"><a className="top-link">Profile</a></Link>
 			<div className="dropdown-content">
 			<Link legacyBehavior href="/about/team"><a>Team</a></Link>
 			<Link legacyBehavior href="/about/company"><a>Company</a></Link>
 			</div>
 		</li>
 		<li>
-			<Link legacyBehavior href="/research"><a className="top-link">Research</a>
+			<Link legacyBehavior href="/research"><a className="top-link">Works</a>
 			</Link>
 		</li>
 		<li>

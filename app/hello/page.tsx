@@ -3,31 +3,44 @@ import { Splide, SplideSlide } from "splide-nextjs/react-splide";
 import '@splidejs/splide/css';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import Navbar from '../../components/navbar';
+import SkillsBoard from '../../components/skill_board';
 import React, { useEffect, useState } from 'react';
+import styles from './skill_board.module.css';
 
 const Hello = () => {
-	// const [windowWidth, setWindowWidth] = useState(0); // 初期値を0に設定
-	// useEffect(() => {
-	// 	// コンポーネントがマウントされた後にウィンドウ幅を設定
-	// 	setWindowWidth(window.innerWidth);
-	
-	// 	// ウィンドウサイズが変わったらウィンドウ幅を更新
-	// 	const handleResize = () => {
-	// 	  setWindowWidth(window.innerWidth);
-	// 	};
-	
-	// 	window.addEventListener('resize', handleResize);
-	
-	// 	// クリーンアップ関数
-	// 	return () => window.removeEventListener('resize', handleResize);
-	//   }, []);
+	const [windowWidth, setWindowWidth] = useState(0); // 初期値を0に設定
+	useEffect(() => {
+		const handleResize = () => {
+			setWindowWidth(window.innerWidth); // ウィンドウの幅を更新
+		};
+		handleResize();
+		window.addEventListener('resize', handleResize);
+		// クリーンアップ関数
+		return () => window.removeEventListener('resize', handleResize);
+	  }, []);
 	return (
 	  <>
-		<Navbar /> {/* このページのナビゲーションバーとしてNavbarコンポーネントを配置 */}
-		<h1>I'm yutakagi</h1>
-		<p>This is my portfolio page.</p>
+		<div className="navbar">
+			<Navbar />
+		</div>
+		<hr style={{ border: "1px solid #ccc", margin: "33px 0" }} /> {/* 区切り用の横線 */}
+		<div style={{textAlign: "center"}}>
+			<h1>I'm yutakagi</h1>
+			<p>This is my portfolio page.</p>
+		</div>
 		<style>
 		  {`
+			.navbar {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1000;
+			background-color: #fff;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			}
+			.main-content {
+			padding-top: 60px; /* Navbarの高さに応じて調整 */
+			}
 			.overlay-container {
 			  position: relative;
 			  width: 100%;
@@ -75,7 +88,7 @@ const Hello = () => {
 		<Splide
 		  options={{
 			rewind: true,
-			width: window.innerWidth / 1,
+			width: windowWidth,
 			perPage: 2,
 			type: "loop",
 			autoplay: true,
@@ -119,6 +132,20 @@ const Hello = () => {
 			</div>
 		  </SplideSlide>
 		</Splide>
+		<hr style={{ border: "1px solid #ccc", margin: "30px 0" }} /> {/* 区切り用の横線 */}
+			<div id="about-me" style={{ textAlign: "center" }}>
+				<h2>About Me</h2>
+				<p>こんにちは、ゆたかぎです。</p>
+				<p>新しい技術</p>
+			</div>
+		<hr style={{ border: "1px solid #ccc", margin: "40px 0" }} /> {/* 区切り用の横線 */}
+		<div id="skill" style={{ textAlign: "center" }}>
+			<h1>My Skills</h1>
+			<p>here is what I can do</p>
+		</div>
+		<div className={styles['skills-board']}>
+		<SkillsBoard />
+		</div>
 	  </>
 	);
   }

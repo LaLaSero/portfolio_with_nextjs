@@ -1,0 +1,26 @@
+/* skill_board.module.css */
+.skillCard {
+	padding: 20px;
+	margin: 10px 0;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+  
+  .skillName {
+	font-weight: bold;
+  }
+  
+  .skillExperience {
+	margin-left: 20px;
+	font-style: italic;
+  }
+  
+  .skillLevel {
+	margin-left: auto;
+	color: #FFD700; /* 星の色 */
+  }
+  
