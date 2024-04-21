@@ -6,6 +6,7 @@ import Navbar from '../../components/navbar';
 import SkillsBoard from '../../components/skill_board';
 import React, { useEffect, useState } from 'react';
 import styles from './skill_board.module.css';
+import TimelineItem from '../../components/TimelineItem';
 
 const Hello = () => {
 	const [windowWidth, setWindowWidth] = useState(0); // 初期値を0に設定
@@ -133,11 +134,40 @@ const Hello = () => {
 		  </SplideSlide>
 		</Splide>
 		<hr style={{ border: "1px solid #ccc", margin: "30px 0" }} /> {/* 区切り用の横線 */}
-			<div id="about-me" style={{ textAlign: "center" }}>
-				<h2>About Me</h2>
-				<p>こんにちは、ゆたかぎです。</p>
-				<p>新しい技術</p>
-			</div>
+		<div id="about-me" style={{ 
+			textAlign: "center",
+			maxWidth: "600px",
+			margin: "50px auto",
+			padding: "20px",
+			backgroundColor: "#f9f9f9",
+			boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+			borderRadius: "4px"
+			}}>
+			<h2 style={{ 
+				marginBottom: "20px",
+				fontSize: "26px",
+				color: "#333"
+			}}>About Me</h2>
+			<p style={{ 
+				fontSize: "18px",
+				color: "#666",
+				lineHeight: "1.6"
+			}}>こんにちは、ゆたかぎです。 <br />
+			現在は大学で機械工学/航空宇宙工学を学びながら、留年を機に入学した42tokyoという
+			エンジニア養成期間でコンピュータサイエンスについても学んでいます。</p>
+		</div>
+
+		<div style={{ maxWidth: "800px", margin: "auto", paddingTop: "20px" }}>
+			<hr style={{ border: "1px solid #ccc", margin: "30px 0" }} /> {/* 区切り用の横線 */}
+		<div style={{ maxWidth: "600px", margin: "auto" }}>
+			<h1 style={{ textAlign: "center", margin: "40px 0" }}>Resume</h1>
+			<TimelineItem date="\today" description="週21コマで死にかけている" />
+			<TimelineItem date="2023.9" description="42Tokyo 入学" />
+			<TimelineItem date="2023.3" description="留年確定 orz" />
+			<TimelineItem date="2021.4" description="名古屋大学 工学部 機械航空宇宙工学科 入学" />
+			<TimelineItem date="2021.3" description="愛知県立 刈谷高等学校 卒業" />
+		</div>
+		</div>
 		<hr style={{ border: "1px solid #ccc", margin: "40px 0" }} /> {/* 区切り用の横線 */}
 		<div id="skill" style={{ textAlign: "center" }}>
 			<h1>My Skills</h1>

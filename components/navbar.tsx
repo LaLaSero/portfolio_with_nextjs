@@ -1,6 +1,7 @@
 // components/Navbar.js
 "use client"
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = () => {
 return (
@@ -85,10 +86,25 @@ return (
 		</li>
 		<li>
 			<Link legacyBehavior href="/contact"><a className="top-link">Contact</a></Link>
-			<div className="dropdown-content">
-			<Link legacyBehavior href="/contact/email"><a>e-mail</a></Link>
-			<Link legacyBehavior href="https://twitter.com/La_La_Sero"><a>Twitter</a></Link>
-			<Link legacyBehavior href="https://github.com/dashboard"><a>Github</a></Link>
+			<div className="dropdown-content" >
+			<Link legacyBehavior href="/contact/email">
+				<a>
+				<Image src="/images/email_logo.jpeg" alt="email" width={24} height={24}  style={{ verticalAlign: 'middle' }}/>
+					e-mail
+				</a>
+			</Link>
+			<Link legacyBehavior href="https://twitter.com/La_La_Sero">
+				<a>
+				<Image src="/images/X_logo.jpeg" alt="twitter" width={24} height={24}  style={{ verticalAlign: 'middle' }}/>
+					SNS
+				</a>
+				</Link>
+			<Link legacyBehavior href="https://github.com/dashboard">
+				<a>
+				<Image src="/images/GitHub-Mark.png" alt="github" width={24} height={24}  style={{ verticalAlign: 'middle' }}/>
+					Github
+				</a>
+			</Link>
 			</div>
 		</li>
 		</ul>
