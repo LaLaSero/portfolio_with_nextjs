@@ -24,7 +24,7 @@ const Hello = () => {
 	return (
 	  <>
 		<Navbar />
-		<h1>I'm yutakagi</h1>
+		<h1>Im yutakagi</h1>
 		<p>This is my portfolio page.</p>
 		<style>
 		  {`
