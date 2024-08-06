@@ -1,24 +1,12 @@
 "use client";
-import { Splide, SplideSlide } from "splide-nextjs/react-splide";
-import '@splidejs/splide/css';
-import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import Navbar from '../../components/navbar';
 import SkillsBoard from '../../components/skill_board';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './skill_board.module.css';
 import TimelineItem from '../../components/TimelineItem';
 import Image from 'next/image'; // ここで正しくインポート
 
 const Hello = () => {
-	const [windowWidth, setWindowWidth] = useState(0); // 初期値を0に設定
-	useEffect(() => {
-		const handleResize = () => {
-			setWindowWidth(window.innerWidth); // ウィンドウの幅を更新
-		};
-		handleResize();
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-	  }, []);
 	return (
 	  <>
 		<div className="navbar">
@@ -35,8 +23,8 @@ const Hello = () => {
 		</div>
 		<hr style={{ border: "1px solid #ccc", margin: "20px 0" }} />
 		<h1 style={{ textAlign: "center", margin: "20px 0" }}>My Works</h1>
-		<style>
-		  {`
+		
+		<style jsx>{`
 			.navbar {
 			position: fixed;
 			top: 0;
@@ -91,53 +79,6 @@ const Hello = () => {
 			  }
 		  `}
 		</style>
-		<Splide
-		  options={{
-			rewind: true,
-			width: windowWidth,
-			perPage: 2,
-			type: "loop",
-			autoplay: true,
-			perMove: 1,
-		  }}
-		>
-		  <SplideSlide>
-			<div className="overlay-container">
-			  <Image src="/images/fuji_boat.jpg" alt="Image 1" layout="responsive" width={700} height={475} />
-			  <div className="overlay">
-				<p>Mt.fuji</p>
-				<a href="https://example.com/link1" className="overlay-button">see more</a>
-			  </div>
-			</div>
-		  </SplideSlide>
-		  <SplideSlide>
-			<div className="overlay-container">
-			  <Image src="/images/fuji_dakt.JPG" alt="Image 1" layout="responsive" width={700} height={475} />
-			  <div className="overlay">
-				<p>MagicHour</p>
-				<a href="https://example.com/link2" className="overlay-button">see more</a>
-			  </div>
-			</div>
-		  </SplideSlide>
-		  <SplideSlide>
-			<div className="overlay-container">
-			  <Image src="/images/sakura.JPG" alt="Image 1" layout="responsive" width={700} height={475} />
-			  <div className="overlay">
-				<p>Sakura</p>
-				<a href="https://example.com/link3" className="overlay-button">see more</a>
-			  </div>
-			</div>
-		  </SplideSlide>
-		  <SplideSlide>
-			<div className="overlay-container">
-			  <Image src="/images/highland.jpg" alt="Image 1" layout="responsive" width={700} height={475} />
-			  <div className="overlay">
-				<p>Highland</p>
-				<a href="https://example.com/link4" className="overlay-button">see more</a>
-			  </div>
-			</div>
-		  </SplideSlide>
-		</Splide>
 		<hr style={{ border: "1px solid #ccc", margin: "30px 0" }} />
 		<div id="about-me" style={{ 
 			textAlign: "center",
@@ -162,7 +103,7 @@ const Hello = () => {
 		</div>
 
 		<div style={{ maxWidth: "800px", margin: "auto", paddingTop: "20px" }}>
-			<hr style={{ border: "1px solid #ccc", margin: "30px 0" }} /> {/* 区切り用の横線 */}
+			<hr style={{ border: "1px solid #ccc", margin: "30px 0" }} />
 		<div style={{ maxWidth: "600px", margin: "auto" }}>
 			<h1 style={{ textAlign: "center", margin: "40px 0" }}>Resume</h1>
 			<TimelineItem date="\today" description="週21コマで死にかけている" />
@@ -171,7 +112,7 @@ const Hello = () => {
 			<TimelineItem date="2021.3" description="愛知県立 刈谷高等学校 卒業" />
 		</div>
 		</div>
-		<hr style={{ border: "1px solid #ccc", margin: "40px 0" }} /> {/* 区切り用の横線 */}
+		<hr style={{ border: "1px solid #ccc", margin: "40px 0" }} /> 
 		<div id="skill" style={{ textAlign: "center" }}>
 			<h1>My Skills</h1>
 			<p>here is what I can do</p>
