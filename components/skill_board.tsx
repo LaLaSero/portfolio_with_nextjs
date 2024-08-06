@@ -26,14 +26,14 @@ const skillsData = [
 	  ],
 	},
 	{
-		category: "保有資格",
-		skills: [
-		  { name: "TOEIC L&R", experience: "score: 860" },
-		  // その他のバックエンドスキル...
-		],
-	  },
+	  category: "保有資格",
+	  skills: [
+		{ name: "TOEIC L&R", experience: "score: 860", level: 0 }, // level プロパティを追加
+		// その他のバックエンドスキル...
+	  ],
+	},
   ];
-
+  
 const SkillsBoard: React.FC = () => {
 	return (
 	  <div className={styles.skillsBoard}>

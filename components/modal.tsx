@@ -1,6 +1,12 @@
 // components/Modal.tsx
-import React from 'react';
+import React, { ReactNode, MouseEvent } from 'react';
 import styled from 'styled-components';
+
+interface ModalProps {
+  show: boolean;
+  onClose: () => void;
+  children: ReactNode;
+}
 
 const ModalBackdrop = styled.div`
   position: fixed;
@@ -20,18 +26,23 @@ const ModalContent = styled.div`
   border-radius: 5px;
 `;
 
-const Modal = ({ show, onClose, children }) => {
+const Modal: React.FC<ModalProps> = ({ show, onClose, children }) => {
   if (!show) {
     return null;
   }
 
+  const handleBackdropClick = (e: MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    onClose();
+  };
+
   return (
-    <ModalBackdrop onClick={onClose}>
+    <ModalBackdrop onClick={handleBackdropClick}>
       <ModalContent onClick={e => e.stopPropagation()}>
         {children}
       </ModalContent>
     </ModalBackdrop>
   );
-}
+};
 
 export default Modal;
