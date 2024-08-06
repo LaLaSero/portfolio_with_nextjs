@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextRequest } from 'next/server';
 
 // export async function GET() {
 //     const message = process.env["hello"] || 'Default message';
@@ -8,13 +8,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 // pages/api/calculate.js
 // pages/api/hello.ts
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
-  const url = req.url ? new URL(req.url, `http://${req.headers.host}`) : null;
-  
-  if (!url) {
-    return res.status(400).json({ error: 'Invalid URL' });
-  }
-
+export async function GET(req: NextRequest) {
+  const url = new URL(req.url);
   const a = url.searchParams.get("a");
   const b = url.searchParams.get("b");
   const operation = url.searchParams.get("operation");
@@ -37,5 +32,5 @@ export async function GET(req: NextApiRequest, res: NextApiResponse) {
       result = 'Invalid operation';
   }
   
-  return res.status(200).json({ result });
+  return NextResponse.json({ result });
 }
