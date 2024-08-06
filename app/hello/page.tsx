@@ -7,6 +7,7 @@ import SkillsBoard from '../../components/skill_board';
 import React, { useEffect, useState } from 'react';
 import styles from './skill_board.module.css';
 import TimelineItem from '../../components/TimelineItem';
+import Image from 'next/image'; // ここで正しくインポート
 
 const Hello = () => {
 	const [windowWidth, setWindowWidth] = useState(0); // 初期値を0に設定
@@ -16,7 +17,6 @@ const Hello = () => {
 		};
 		handleResize();
 		window.addEventListener('resize', handleResize);
-		// クリーンアップ関数
 		return () => window.removeEventListener('resize', handleResize);
 	  }, []);
 	return (
@@ -24,11 +24,17 @@ const Hello = () => {
 		<div className="navbar">
 			<Navbar />
 		</div>
-		<hr style={{ border: "1px solid #ccc", margin: "33px 0" }} /> {/* 区切り用の横線 */}
+		<hr style={{ border: "1px solid #ccc", margin: "33px 0" }} />
 		<div style={{textAlign: "center"}}>
-			<h1>I'm yutakagi</h1>
+			<h1>Hello!
+			<span style={{ margin: "0 16px" }}>
+				I'm yutakagi.
+			</span>
+			</h1>
 			<p>This is my portfolio page.</p>
 		</div>
+		<hr style={{ border: "1px solid #ccc", margin: "20px 0" }} />
+		<h1 style={{ textAlign: "center", margin: "20px 0" }}>My Works</h1>
 		<style>
 		  {`
 			.navbar {
@@ -46,7 +52,6 @@ const Hello = () => {
 			  position: relative;
 			  width: 100%;
 			  height: auto;
-
 			}
 			.overlay {
 			  position: absolute;
@@ -98,7 +103,7 @@ const Hello = () => {
 		>
 		  <SplideSlide>
 			<div className="overlay-container">
-			  <img src="/images/fuji_boat.jpg" alt="Image 1" style={{ width: '100%', height: 'auto' }} />
+			  <Image src="/images/fuji_boat.jpg" alt="Image 1" layout="responsive" width={700} height={475} />
 			  <div className="overlay">
 				<p>Mt.fuji</p>
 				<a href="https://example.com/link1" className="overlay-button">see more</a>
@@ -107,7 +112,7 @@ const Hello = () => {
 		  </SplideSlide>
 		  <SplideSlide>
 			<div className="overlay-container">
-			  <img src="/images/fuji_dakt.JPG" alt="Image 1" style={{ width: '100%', height: 'auto' }} />
+			  <Image src="/images/fuji_dakt.JPG" alt="Image 1" layout="responsive" width={700} height={475} />
 			  <div className="overlay">
 				<p>MagicHour</p>
 				<a href="https://example.com/link2" className="overlay-button">see more</a>
@@ -116,7 +121,7 @@ const Hello = () => {
 		  </SplideSlide>
 		  <SplideSlide>
 			<div className="overlay-container">
-			  <img src="/images/sakura.JPG" alt="Image 1" style={{ width: '100%', height: 'auto' }} />
+			  <Image src="/images/sakura.JPG" alt="Image 1" layout="responsive" width={700} height={475} />
 			  <div className="overlay">
 				<p>Sakura</p>
 				<a href="https://example.com/link3" className="overlay-button">see more</a>
@@ -125,7 +130,7 @@ const Hello = () => {
 		  </SplideSlide>
 		  <SplideSlide>
 			<div className="overlay-container">
-			  <img src="/images/highland.jpg" alt="Image 1" style={{ width: '100%', height: 'auto' }} />
+			  <Image src="/images/highland.jpg" alt="Image 1" layout="responsive" width={700} height={475} />
 			  <div className="overlay">
 				<p>Highland</p>
 				<a href="https://example.com/link4" className="overlay-button">see more</a>
@@ -133,7 +138,7 @@ const Hello = () => {
 			</div>
 		  </SplideSlide>
 		</Splide>
-		<hr style={{ border: "1px solid #ccc", margin: "30px 0" }} /> {/* 区切り用の横線 */}
+		<hr style={{ border: "1px solid #ccc", margin: "30px 0" }} />
 		<div id="about-me" style={{ 
 			textAlign: "center",
 			maxWidth: "600px",
@@ -152,9 +157,8 @@ const Hello = () => {
 				fontSize: "18px",
 				color: "#666",
 				lineHeight: "1.6"
-			}}>こんにちは、ゆたかぎです。 <br />
-			現在は大学で機械工学/航空宇宙工学を学びながら、留年を機に入学した42tokyoという
-			エンジニア養成期間でコンピュータサイエンスについても学んでいます。</p>
+			}}>こんにちはyutakagiです。 <br />
+			現在は大学で機械工学/航空宇宙工学を学びながら，42tokyoというソフトウェアエンジニア養成期間でコンピュータサイエンスについて学んでいます。</p>
 		</div>
 
 		<div style={{ maxWidth: "800px", margin: "auto", paddingTop: "20px" }}>
@@ -163,7 +167,6 @@ const Hello = () => {
 			<h1 style={{ textAlign: "center", margin: "40px 0" }}>Resume</h1>
 			<TimelineItem date="\today" description="週21コマで死にかけている" />
 			<TimelineItem date="2023.9" description="42Tokyo 入学" />
-			<TimelineItem date="2023.3" description="留年確定 orz" />
 			<TimelineItem date="2021.4" description="名古屋大学 工学部 機械航空宇宙工学科 入学" />
 			<TimelineItem date="2021.3" description="愛知県立 刈谷高等学校 卒業" />
 		</div>
@@ -178,7 +181,6 @@ const Hello = () => {
 		</div>
 	  </>
 	);
-  }
+}
 
 export default Hello;
-

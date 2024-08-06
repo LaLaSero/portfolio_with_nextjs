@@ -93,12 +93,14 @@ return (
 					e-mail
 				</a>
 			</Link>
+
 			<Link legacyBehavior href="https://twitter.com/La_La_Sero">
 				<a>
 				<Image src="/images/X_logo.jpeg" alt="twitter" width={24} height={24}  style={{ verticalAlign: 'middle' }}/>
 					SNS
 				</a>
-				</Link>
+			</Link>
+
 			<Link legacyBehavior href="https://github.com/dashboard">
 				<a>
 				<Image src="/images/GitHub-Mark.png" alt="github" width={24} height={24}  style={{ verticalAlign: 'middle' }}/>

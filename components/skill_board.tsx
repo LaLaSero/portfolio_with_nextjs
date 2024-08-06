@@ -9,11 +9,12 @@ type SkillsBoardProps = {
 
 const skillsData = [
 	{
-	  category: "フロントエンド",
+	  category: "プログラミング言語",
 	  skills: [
-		{ name: "CSS3", experience: "3日", level: 1 },
-		{ name: "JavaScript", experience: "3日", level: 1 },
-		// その他のフロントエンドスキル...
+		{ name: "C", experience: "だいたい書ける", level: 5 },
+		{ name: "C++", experience: "learner", level: 1 },
+		{ name: "Python", experience: "普段使い", level: 3 },
+		{ name: "Rust", experience: "learner", level: 0},
 	  ],
 	},
 	{
@@ -28,7 +29,6 @@ const skillsData = [
 		category: "保有資格",
 		skills: [
 		  { name: "TOEIC L&R", experience: "score: 860" },
-		  { name: "E資格(予定)",},
 		  // その他のバックエンドスキル...
 		],
 	  },
