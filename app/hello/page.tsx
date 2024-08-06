@@ -28,7 +28,7 @@ const Hello = () => {
 		<div style={{textAlign: "center"}}>
 			<h1>Hello!
 			<span style={{ margin: "0 16px" }}>
-				I'm yutakagi.
+				I&apos;m yutakagi.
 			</span>
 			</h1>
 			<p>This is my portfolio page.</p>
