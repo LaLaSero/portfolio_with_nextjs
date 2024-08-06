@@ -21,8 +21,6 @@ const skillsData = [
 	  category: "バックエンド",
 	  skills: [
 		{ name: "Node.js", experience: "一週間", level: 1 },
-		{ name: "Express", experience: "2年", level: 4 },
-		// その他のバックエンドスキル...
 	  ],
 	},
 	{

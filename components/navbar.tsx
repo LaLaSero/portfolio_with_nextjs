@@ -101,7 +101,7 @@ return (
 				</a>
 			</Link>
 
-			<Link legacyBehavior href="https://github.com/dashboard">
+			<Link legacyBehavior href="https://github.com/LaLaSero/">
 				<a>
 				<Image src="/images/GitHub-Mark.png" alt="github" width={24} height={24}  style={{ verticalAlign: 'middle' }}/>
 					Github
